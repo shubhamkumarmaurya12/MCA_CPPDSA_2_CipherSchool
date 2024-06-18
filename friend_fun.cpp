@@ -1,14 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-  int main(){
-   string str = "shubham kumar maurys";
-   int start=0;   int end=str.size()-1;
-
-   while(start<end){
-      swap(str[start],str[end]);
-     start++; end--;
+ template<class T, class U>
+ class Add{
+    public:
+    T x; U y;
+   Add(T a,U b){
+    x=a; y=b;
    }
-   cout<<str;
-   return 0;
-  }
+
+   void show(){
+    cout<<"Sum is: "<<x+y<<endl;
+   }
+ };
+
+ int main(){
+    Add<int,float> obj(20,42.10);
+    obj.show();
+    return 0;
+ }
