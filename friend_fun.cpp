@@ -1,23 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Distance{
-    private:
-    int x;
-
-    friend int increasedistance(Distance);
+ template<class T, class U>
+ class Add{
     public:
-    Distance(){
-        x=10;
-    }
-};
+    T x; U y;
+   Add(T a,U b){
+    x=a; y=b;
+   }
 
-int increasedistance(Distance d){
-    d.x+=10;
-    return d.x;
-}
-int main(){
-  Distance obj;
-  cout<<increasedistance(obj);
+   void show(){
+    cout<<"Sum is: "<<x+y<<endl;
+   }
+ };
+
+ int main(){
+    Add<int,float> obj(20,42.10);
+    obj.show();
     return 0;
-}
+ }
