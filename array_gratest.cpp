@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     
     int arr[] = {23,43,12,56,11};
-
+ 
     int n = sizeof(arr)/sizeof(arr[0]);
     int gratest =arr[0];
 
