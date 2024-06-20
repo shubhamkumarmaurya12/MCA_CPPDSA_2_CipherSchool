@@ -24,7 +24,7 @@ int main(){
     cin>>arr2[i];
    }
 
-   cout<<"common element are"<<endl;
+   cout<<"common element are"<<endl;  
    for(int i=0; i<n1; i++){
     for(int j=0; j<n2; j++){
         if(arr1[i]==arr2[j]){
