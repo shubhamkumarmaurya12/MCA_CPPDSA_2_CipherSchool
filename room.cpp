@@ -1,17 +1,38 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-    string name = "Shubham";
-    int start=0; int end=name.size()-1;
-    while(start<end){
-        if(name[start]!=name[end]){
-            cout<<"Not a pallindrom"<<endl;
-            return 0;
+ void Duplicate(int arr[], int n){
+ bool d =false;
+ 
+ for(int i=0; i<n; i++){
+    for(int j=i+1; j<n; j++){
+        if(arr[i]==arr[j]){
+            d=true;
+            cout<<"Duplicate value is : "<<arr[i]<<endl;
+            break;
         }
-        start++; end--;
     }
+ }
+ if(!d){
+    cout<<"Duplicate value not found"<<endl;
+ }
 
-    cout<<"it's a pallindrom"<<endl;
+ }
+
+ int main() {
+ 
+ int n;
+ cout<<"Enter the size of array"<<endl;
+ cin>>n;
+
+ int arr[n];
+
+ cout<<"Enter element"<<endl;
+ for(int i=0; i<n; i++){
+    cin>>arr[i];
+ }
+
+ Duplicate(arr,n);
+
     return 0;
-}
+ }

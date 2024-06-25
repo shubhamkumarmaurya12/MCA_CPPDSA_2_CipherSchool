@@ -1,49 +1,30 @@
-#include<bits/stdc++.h>
-using namespace std;
+ #include<bits/stdc++.h>
+ using namespace std;
 
-// bool Search(int arr[] , int size , int key){
-//      for(int i=0; i<size; i++){
-//         if(arr[i]==key){
-//             return i;
-//         }  
-//      }
-//      cout<<"Not present"<<endl;
-//      return false;
-// }
+int Binarysearch(int arr[] , int n, int key){
+int start = 0;
+int end = n-1;
+int mid = (start+end)/2;
 
-// int main(){
-  
-//   int n;
-//   cout<<"Enter the size of array"<<endl;
-//   cin>>n;
-
-//   int arr[n];
-//   cout<<"Enter the element inside array"<<endl;
-//   for(int i=0; i<n; i++){
-//     cin>>arr[i];
-//   }
- 
-//   int key;
-//   cout<<"Enter the key which you want to search inside array"<<endl;
-//   cin>>key;
-
-//   cout<<Search(arr,n,key);
-//     return 0;
-// }
-
-int main(){
-    int arr[8] = {10,20,30,40,50,60,70,80};
-     
-     int start =0; int end =start+1;
-    while(end<8){
-        swap(arr[start],arr[end]);
-        start+=2; end+=2;
+ while(start<=end){
+    if(arr[mid]==key){
+        return mid;
+    } else if(arr[mid]<key){
+        start=mid+1;
+    } else {
+        end=mid-1;
     }
+    mid=(start+end)/2;
+ }
 
-    for(int i=0; i<8; i++){
-        cout<<arr[i]<<" ";
-    }
+ return -1;
+
+} 
+
+ int main(){
+
+ int arr[5] = {12,3,5,10,9};
+
+ cout<<Binarysearch(arr,5,10)<<endl;
     return 0;
-}
-
- 
+ }
