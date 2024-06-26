@@ -1,30 +1,18 @@
  #include<bits/stdc++.h>
  using namespace std;
 
-int Binarysearch(int arr[] , int n, int key){
-int start = 0;
-int end = n-1;
-int mid = (start+end)/2;
+int main(){
+ 
+ string str = "Ram is a good boy";
 
- while(start<=end){
-    if(arr[mid]==key){
-        return mid;
-    } else if(arr[mid]<key){
-        start=mid+1;
+  string result;
+  for(int i=0; i<str.length(); i++){
+    if(str[i]==' '){
+        result+="@9"; 
     } else {
-        end=mid-1;
+        result+=str[i];
     }
-    mid=(start+end)/2;
- }
-
- return -1;
-
-} 
-
- int main(){
-
- int arr[5] = {12,3,5,10,9};
-
- cout<<Binarysearch(arr,5,10)<<endl;
-    return 0;
- }
+  }
+  cout<<result;
+ return 0;
+}
