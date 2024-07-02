@@ -13,19 +13,16 @@
 
  };
 
- void InsertAtTail(Node* &head , int d){
-  
-Node *newNode = new Node(d);
-if(head==NULL){
-    head=newNode;
-    return ;
-}
+ void InsertAtTail(Node* &head,Node* &tail, int d){
+  if(head==NULL){
+    head=new Node(d);
+    tail=head;
+  } else {
 
-Node *temp = head;
-while(temp->next!=NULL){
-    temp=temp->next;
-}
-temp->next=newNode;
+    tail->next = new Node(d);
+   tail=tail->next;
+  }
+
  
  }
 
@@ -52,14 +49,14 @@ bool Search(Node *head,int key){
 
 int main(){
 
-  Node *head = NULL;
+  Node *head = NULL; Node *tail = NULL;
  
-InsertAtTail(head,1); 
-InsertAtTail(head,21); 
-InsertAtTail(head,9); 
-InsertAtTail(head,6); 
+InsertAtTail(head,tail,1); 
+InsertAtTail(head,tail,21); 
+InsertAtTail(head,tail,9); 
+InsertAtTail(head,tail,6); 
 
 print(head);
-cout<<Search(head,21);
+//cout<<Search(head,21);
     return 0;
 }
