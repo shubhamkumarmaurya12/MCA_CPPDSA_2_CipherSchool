@@ -104,6 +104,25 @@ void Delete2(Node* &head){
   delete curr;
 }
 
+// Delete At Any position
+void Delete3(Node* &head,int pos){
+  if(pos==1){
+ Node *temp = head;
+  head=head->next;
+  delete temp;
+
+  }
+
+  pos--;
+  Node *curr = head;
+  Node *prev = NULL;
+  while(pos--){
+   prev = curr;
+   curr=curr->next;
+  }
+  prev->next=curr->next;
+  delete curr;
+}
 int main(){
 
   Node *head = NULL; Node *tail = NULL;
@@ -120,8 +139,10 @@ InsertAtTail(head,tail,6);
 //reverse(head);
 
 //InsertATAny(head,20,3);
-Delete(head);
-Delete2(head);
+// Delete(head);
+// Delete2(head);
+
+Delete3(head,3);
 print(head);
     return 0;
 }
