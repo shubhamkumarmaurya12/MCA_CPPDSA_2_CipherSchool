@@ -1,8 +1,8 @@
  #include<bits/stdc++.h>
  using namespace std;
  class Node {
- public:
- int data;
+ public:    
+ int data; 
  Node *next;
  Node(int d){
     data=d;
@@ -123,6 +123,22 @@ void Delete3(Node* &head,int pos){
   prev->next=curr->next;
   delete curr;
 }
+
+void InsertATHead(Node* &head , int data){
+  Node *temp = new Node(data);
+  temp->next=head;
+  head=temp;
+}
+
+void InsertAtTail(Node* &head, int data){
+  Node *temp = head;
+  while(temp->next!=NULL){
+    temp=temp->next;
+  }
+  Node *temp2 = new Node(data);
+  temp->next=temp2;
+  temp2=temp;
+}
 int main(){
 
   Node *head = NULL; Node *tail = NULL;
@@ -130,19 +146,10 @@ int main(){
 InsertAtTail(head,tail,1); 
 InsertAtTail(head,tail,21); 
 InsertAtTail(head,tail,9); 
-InsertAtTail(head,tail,6); 
+InsertAtTail(head,tail,21); 
 
-//print(head);
- 
-// cout<<Search(head,21);
 
-//reverse(head);
-
-//InsertATAny(head,20,3);
-// Delete(head);
-// Delete2(head);
-
-Delete3(head,3);
+InsertAtTail(head,100);
 print(head);
     return 0;
 }
